@@ -1,0 +1,133 @@
+<mxfile host="65bd71144e">
+    <diagram id="csYLSRbk9r_FINRqVxN_" name="Page-1">
+        <mxGraphModel dx="1179" dy="662" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.web2;" vertex="1" parent="1">
+                    <mxGeometry x="245" y="200" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/web/SignalR.svg;" vertex="1" parent="1">
+                    <mxGeometry x="539" y="398" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/App_Services.svg;" vertex="1" parent="1">
+                    <mxGeometry x="539" y="200" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.web2;" vertex="1" parent="1">
+                    <mxGeometry x="245" y="398" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.user;" vertex="1" parent="1">
+                    <mxGeometry x="46" y="200" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.user;" vertex="1" parent="1">
+                    <mxGeometry x="46" y="398" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="User 1&lt;div&gt;View Documents&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="36" y="280" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="User 2&lt;div&gt;Upload Documents&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="31" y="478" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="View Documents" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="227.5" y="280" width="115" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Upload Documents" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="227.5" y="478" width="115" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="SignalR" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="549" y="478" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Web API" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="549" y="280" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.data;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="280" width="70" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Sql Database" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="766" y="370" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="endArrow=classic;html=1;exitX=0.98;exitY=0.565;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.027;entryY=0.555;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="8" target="6">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80" y="560" as="sourcePoint"/>
+                        <mxPoint x="130" y="510" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="" style="endArrow=classic;html=1;entryX=0.042;entryY=0.8;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6" target="5">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="370" y="510" as="sourcePoint"/>
+                        <mxPoint x="420" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="Upload Docs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="21">
+                    <mxGeometry x="-0.2079" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="17" target="3">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="500" as="sourcePoint"/>
+                        <mxPoint x="440" y="450" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="Subscribe&amp;nbsp;&lt;div&gt;to doc Update&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="22">
+                    <mxGeometry x="-0.2636" y="2" relative="1" as="geometry">
+                        <mxPoint x="38" y="8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1" source="5">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="620" y="250" as="sourcePoint"/>
+                        <mxPoint x="760" y="334" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="Save &amp;amp; Retrieve&amp;nbsp;&lt;div&gt;Data&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="24">
+                    <mxGeometry x="-0.1881" y="3" relative="1" as="geometry">
+                        <mxPoint x="21" y="12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0.017;entryY=0.54;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.01;exitY=0.55;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="7" target="2">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80" y="250" as="sourcePoint"/>
+                        <mxPoint x="130" y="200" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=-0.048;entryY=0.51;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="5">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="240" as="sourcePoint"/>
+                        <mxPoint x="370" y="190" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="Subscribe to Doc Update &amp;amp;&amp;nbsp;&lt;div&gt;view docs&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="26">
+                    <mxGeometry x="-0.1264" y="2" relative="1" as="geometry">
+                        <mxPoint x="8" y="-18" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="" style="endArrow=classic;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.322;exitY=0.045;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=#FF6666;" edge="1" parent="1" source="3" target="17">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="380" y="400" as="sourcePoint"/>
+                        <mxPoint x="430" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="Send update&amp;nbsp;&lt;div&gt;to subscriber&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="27">
+                    <mxGeometry x="0.1842" y="5" relative="1" as="geometry">
+                        <mxPoint x="-29" y="12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="" style="endArrow=classic;html=1;exitX=0.012;exitY=0.73;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.957;entryY=0.73;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#FF6666;" edge="1" parent="1" source="5" target="2">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="320" as="sourcePoint"/>
+                        <mxPoint x="370" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="Document Update sent" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="28">
+                    <mxGeometry x="0.1462" y="-2" relative="1" as="geometry">
+                        <mxPoint y="14" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Real Time Notification&lt;/h1&gt;&lt;p&gt;Developed a real-time notification system using SignalR, React, and .NET Web API.&lt;br data-end=&quot;249&quot; data-start=&quot;246&quot;&gt;&lt;br/&gt;Users subscribed to specific patients receive instant alerts when related documents are uploaded.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="46" y="75" width="577" height="100" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

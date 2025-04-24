@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPatientId } from './Services/patientSlice';
 import { startConnection, subscribeToPatient, unsubscribeFromPatient } from './Services/SignalRService';
+import PatientDetails, { fetchPatientData } from './Components/PatientDetails.js';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import PatientDetails from './Components/PatientDetails.js';
-
-const patient = {
-    id: '12345',
-    name: 'John Doe',
-    documents: ['Document 1', 'Document 2', 'Document 3'],
-};
+import store, { dispatch, getState } from './Services/store'; 
 
 function App() {
-  const [patientId, setPatientId] = useState("");
+  const dispatch = useDispatch();
+  const patientId = useSelector((state) => state.patient.patientId);
+  const patient = useSelector((state) => state.patient.patientDetails);
 
   useEffect(() => {
-    // Start SignalR connection and register toast callback
-    startConnection((message) => {
-      toast.info(message, { position: "top-right" });
-    });
-  }, []);
+    // Pass dispatch and getState to startConnection
+    startConnection(dispatch, store.getState);
+  }, [dispatch]);
 
   const handleSubscribe = () => {
     if (patientId) {
       subscribeToPatient(patientId);
+      fetchPatientData(patientId, dispatch);
       toast.success(`Subscribed to patient ID: ${patientId}`, { position: "bottom-right" });
     }
   };
@@ -30,72 +28,71 @@ function App() {
   const handleUnSubscribe = () => {
     if (patientId) {
       unsubscribeFromPatient(patientId);
-      toast.success(`Subscribed to patient ID: ${patientId}`, { position: "bottom-right" });
+      toast.success(`Unsubscribed from patient ID: ${patientId}`, { position: "bottom-right" });
     }
   };
 
   return (
-    <div style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#f4f4f9', minHeight: '100vh', padding: '2rem' }}>
-      {/* Header */}
-      <header style={{ backgroundColor: '#4CAF50', color: 'white', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
-        <h1>Patient Notification System</h1>
-        <p>Stay updated with real-time patient document notifications</p>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', fontFamily: 'Arial, sans-serif', backgroundColor: '#f9f9f9' }}>
+      <header style={{ backgroundColor: '#4CAF50', color: '#fff', padding: '1rem', textAlign: 'center', fontSize: '1.5rem', fontWeight: 'bold' }}>
+        Patient Documents Notification System
       </header>
 
-      {/* Main Content */}
-      <div style={{ display: 'flex', marginTop: '2rem', gap: '2rem' }}>
-        {/* Left Section */}
-        <div style={{ flex: 1, backgroundColor: 'white', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-          <h2 style={{ color: '#333' }}>📢 Patient Document Notification</h2>
-          <div style={{ marginBottom: '1rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
+        <div style={{ flex: 1, padding: '2rem', backgroundColor: '#ffffff', boxShadow: '2px 0 5px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div>
+            <h1 style={{ color: '#4CAF50', marginBottom: '1rem' }}> 📢 Subscribe to Patient Documents Updates. </h1>
             <input
               type="number"
               placeholder="Enter Patient ID"
               value={patientId}
-              onChange={(e) => setPatientId(e.target.value)}
+              onChange={(e) => dispatch(setPatientId(e.target.value))}
               style={{
                 width: '100%',
                 padding: '0.5rem',
-                borderRadius: '4px',
-                border: '1px solid #ccc',
                 marginBottom: '1rem',
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                fontSize: '1rem',
               }}
             />
-          </div>
-          <div>
-            <button
-              onClick={handleSubscribe}
-              style={{
-                backgroundColor: '#4CAF50',
-                color: 'white',
-                padding: '0.5rem 1rem',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: 'pointer',
-                marginRight: '1rem',
-              }}
-            >
-              Subscribe
-            </button>
-            <button
-              onClick={handleUnSubscribe}
-              style={{
-                backgroundColor: '#f44336',
-                color: 'white',
-                padding: '0.5rem 1rem',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: 'pointer',
-              }}
-            >
-              UnSubscribe
-            </button>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <button
+                onClick={handleSubscribe}
+                style={{
+                  flex: 1,
+                  padding: '0.5rem',
+                  backgroundColor: '#4CAF50',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '1rem',
+                }}
+              >
+                Subscribe
+              </button>
+              <button
+                onClick={handleUnSubscribe}
+                style={{
+                  flex: 1,
+                  padding: '0.5rem',
+                  backgroundColor: '#f44336',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '1rem',
+                }}
+              >
+                UnSubscribe
+              </button>
+            </div>
           </div>
           <ToastContainer />
         </div>
 
-        {/* Right Section */}
-        <div style={{ flex: 2, backgroundColor: 'white', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+        <div style={{ flex: 2, padding: '2rem', backgroundColor: '#f0f0f0', overflowY: 'auto' }}>
           <PatientDetails patient={patient} />
         </div>
       </div>
